@@ -1,5 +1,5 @@
 <template>
-<h2>{{operationTitle()}}</h2>
+<h2>Te</h2>
 <h2>Teste</h2>
  <form>
   <div class="form-group">
@@ -17,40 +17,28 @@
   </div>
   <button type="submit" class="btn btn-primary">{{operationTitle()}}</button>
 </form>
- <hello-world msg="Adicione um novo item" />
 </template>
 
 <script>
-import HelloWorld from './HelloWorld.vue'
 export default {
-  components: {
-    HelloWorld    
-  },
+
   props: {
     operation: {
       type: String,
       required: true
     }
-  },
-  computed: {
-    operationTitle() {
-      return this.operation == 'add' ? 'Adicionar item' 
-              : this.operation == 'edit' ? 'Editar item'
-                : 'add'
-    },
-  }
+  }//,
+  // computed: {
+  //   operationTitle() {
+  //     return this.operation == 'add' ? 'Adicionar item' 
+  //             : this.operation == 'edit' ? 'Editar item'
+  //               : '???'
+  //   },
+  
 }
 </script>
 
 <style >
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 
 @import'~bootstrap/dist/css/bootstrap.css'
 

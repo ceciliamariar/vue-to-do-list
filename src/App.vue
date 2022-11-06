@@ -1,10 +1,9 @@
 <template>
+  <h2>Teste app</h2>
   <edit-item :operation="add"/>
-  <hello-world :msg="Teste"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import EditItem from './components/EditItem.vue'
 
 export default {
