@@ -1,16 +1,17 @@
 <template>
-  <new-item msg="Welcome to Your Vue.js App"/>
+  <edit-item :operation="add"/>
+  <hello-world :msg="Teste"/>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import NewItem from './components/NewItem.vue'
+import EditItem from './components/EditItem.vue'
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    NewItem
+    EditItem
   }
 }
 </script>
