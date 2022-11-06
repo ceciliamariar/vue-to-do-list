@@ -1,39 +1,45 @@
 <template>
-<h2>Te</h2>
-<h2>Teste</h2>
+<h2>{{this.operation}}</h2>
  <form>
   <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <label for="title">Titulo</label>
+    <input type="text" class="form-control" id="title" placeholder="Titulo do item">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <label for="description">Descrição</label>
+    <input type="password" class="form-control" id="description" placeholder="Descrição do item">
   </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  <div class="form-group">
+    <label for="dateConclusionExpected">Data de conclusão</label>
+    <input type="datetime" class="form-control" id="dateConclusionExpected" >
   </div>
-  <button type="submit" class="btn btn-primary">{{operationTitle()}}</button>
+  <button type="submit" class="btn btn-primary">{{this.operation}}</button>
 </form>
 </template>
 
 <script>
+
+import {Item} from '@/models/Item'
+import('@/models/Item').Item
 export default {
 
   props: {
     operation: {
       type: String,
       required: true
+    },
+    item: {
+      type: item,
+      required: true
     }
-  }//,
-  // computed: {
-  //   operationTitle() {
-  //     return this.operation == 'add' ? 'Adicionar item' 
-  //             : this.operation == 'edit' ? 'Editar item'
-  //               : '???'
-  //   },
+  },
+  computed: {
+    operationTitle() {
+      return this.operation == 'add' ? 'Adicionar item' 
+              : this.operation == 'edit' ? 'Editar item'
+                : '???'
+    }
+  }
   
 }
 </script>
