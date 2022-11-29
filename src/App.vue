@@ -1,21 +1,32 @@
 <template>
-  <h2>Teste app</h2>
-  <edit-item :operation="add"/>
+  <section class="w-100 p-4 d-flex justify-content-center pb-4">
+    <h2 class="mb-4">Teste app</h2>
+  </section>
+
+  <add-item @addItem="addItem"/>
   <list-items :items="this.items"/>
+
 </template>
 
 <script>
-import EditItem from './components/EditItem.vue'
+import AddItem from './components/AddItem.vue';
 import ListItems from './components/ListItems.vue'
 
 export default {
   name: 'App',
-  state: {
-    items: {}
-  },
+   data() {
+        return {
+            items: [  ]
+        }
+    },
+    methods: {
+        addItem(item) {
+          this.items.push( { title: item, completed: false } );
+        },
+    },
   components: {
-    EditItem, 
-    ListItems
+    ListItems,
+    AddItem
   }
 }
 </script>

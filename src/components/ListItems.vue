@@ -1,25 +1,19 @@
-<template>
-   <div  v-for="item in groupedItems" :key="item.id">
-    <div class="list-group-item list-group-item-action"> {{item.title}}</div>
-   </div>
+<template >
+  <section class="w-100 p-4 d-flex justify-content-center pb-4">
+  <div>
+    <div  v-for="(item, index) in items" :key="index" class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+      <label class="form-check-label" for="flexCheckDefault">{{ item.title }}</label>
+    </div>
+  </div>
+  </section>
 </template>
 
 <script>
 export default {
 props: {
-    items: {
-      type: Array,
-      required: true
-    }
-  },
-   computed: {
-    groupedItems() {
-      if (this.items.length === 0) {
-        return
-      }
-      return this.items
-    }
-  }
+    items: Array
+  }   
 }
 </script>
 
